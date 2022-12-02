@@ -5,14 +5,14 @@ const Modal = ({ modal, setModal, animateModal, setAnimateModal, message }) => {
 
   const closeModal = () => {
     console.log('closiing')
-    // setModal(false);
+    setModal(false);
     setAnimateModal(false);
     setTimeout(() => {
       setModal(false)
-    }, 400)
+    }, 100)
   }
   return (
-    <div className='bg-[#000014] bg-opacity-95 absolute inset-0 color-white text-slate-100 '>
+    <div className='bg-[#000014] bg-opacity-95 absolute inset-0 color-white text-slate-100'>
       <div className={`w-8 h-8 absolute right-12 pt-5 `}>
 
         <img
@@ -22,9 +22,33 @@ const Modal = ({ modal, setModal, animateModal, setAnimateModal, message }) => {
         />
       </div>
       <div>
-        <form className='flex border flex-col justify-center items-center h-screen transition-all'>
+        <form className='flex border flex-col justify-center items-center h-screen'>
           <legend>New Spent</legend>
-          <div className='w-[300px] h-[300px] bg-red-700'>nan</div>
+          <div className=' bg-red-700 flex flex-col'>
+            <label htmlFor="amount">Expense Name</label>
+            <input
+              id='name'
+              type="text"
+              placeholder='Add the name of the Expense'
+            />
+          </div>
+
+          <div className='flex flex-col bg-red-700'>
+            <label htmlFor="amount">Amount</label>
+            <input
+              id='amount'
+              type="number"
+              placeholder='add the amount of the expense: ej. 300'
+            />
+          </div>
+          <div className=''>
+            <label htmlFor="amount">Amount</label>
+            <input
+              id='amount'
+              type="number"
+              placeholder='add the amount of the expense: ej. 300'
+            />
+          </div>
         </form>
       </div>
 

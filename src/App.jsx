@@ -19,7 +19,7 @@ const App = () => {
 
     setTimeout(() => {
       setAnimateModal(true)
-    }, 3000);
+    }, 100);
   }
 
   const [message, setMessage] = useState(false);
