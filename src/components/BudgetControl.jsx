@@ -1,6 +1,15 @@
 import React from 'react'
 
 const BudgetControl = ({ budget }) => {
+
+  const formatAmount = (amount) => {
+    let formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    return formatter.format(amount)
+  }
+
   return (
     <div>
       <div >
@@ -8,9 +17,16 @@ const BudgetControl = ({ budget }) => {
       </div>
       <div>
         <p>
-          <span>Budget: </span> ${budget}
+          <span>Budget: </span> {formatAmount(budget)}
+        </p>
+        <p>
+          <span>Available: </span> {formatAmount(0)}
+        </p>
+        <p>
+          <span>Spent: </span> {formatAmount(0)}
         </p>
       </div>
+
     </div>
 
   )

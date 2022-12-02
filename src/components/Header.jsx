@@ -3,7 +3,7 @@ import BudgetControl from './BudgetControl.jsx'
 import NewBudget from './NewBudget'
 
 
-const Header = ({ budget, setBudget, isValidBudget, setIsValidBudget }) => {
+const Header = ({ budget, setBudget, isValidBudget, setIsValidBudget, setMessage }) => {
   return (
     <header >
       <h1 className='text-center text-6xl font-bold py-9'>Expense Planner</h1>
@@ -15,6 +15,7 @@ const Header = ({ budget, setBudget, isValidBudget, setIsValidBudget }) => {
           budget={budget}
           setBudget={setBudget}
           setIsValidBudget={setIsValidBudget}
+          setMessage={setMessage}
         />
       )}
     </header>

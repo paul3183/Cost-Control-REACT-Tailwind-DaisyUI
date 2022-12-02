@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import Message from './Message';
 
-const NewBudget = ({ budget, setBudget, setIsValidBudget }) => {
 
-  const [message, setMessage] = useState('')
+const NewBudget = ({ budget, setBudget, setIsValidBudget, setMessage }) => {
+
 
   const handleBudget = (e) => {
     e.preventDefault();
@@ -19,7 +18,7 @@ const NewBudget = ({ budget, setBudget, setIsValidBudget }) => {
   }
 
   return (
-    <div className=''>
+    <div>
       <form
         onSubmit={handleBudget}
         className='p-2 md:px-[150px]'
@@ -46,7 +45,7 @@ const NewBudget = ({ budget, setBudget, setIsValidBudget }) => {
           >
             Add
           </button>
-          {message && <Message><p>It's not a Valid Budget</p></Message>}
+          {/* <Message setMessage={setMessage} message={message} /> */}
         </div>
 
       </form>
