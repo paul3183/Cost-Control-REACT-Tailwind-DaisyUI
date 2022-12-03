@@ -17,9 +17,9 @@ const App = () => {
     console.log('click to add new expense');
     setModal(true);
 
-    setTimeout(() => {
-      setAnimateModal(true)
-    }, 100);
+    // setTimeout(() => {
+    //   setAnimateModal(true)
+    // }, 100);
   }
 
   const [message, setMessage] = useState(false);

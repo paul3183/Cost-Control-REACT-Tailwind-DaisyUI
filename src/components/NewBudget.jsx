@@ -45,7 +45,6 @@ const NewBudget = ({ budget, setBudget, setIsValidBudget, setMessage }) => {
           >
             Add
           </button>
-          {/* <Message setMessage={setMessage} message={message} /> */}
         </div>
 
       </form>
