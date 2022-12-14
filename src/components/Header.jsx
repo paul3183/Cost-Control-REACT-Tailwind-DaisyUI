@@ -5,8 +5,8 @@ import NewBudget from './NewBudget'
 
 const Header = ({ budget, setBudget, isValidBudget, setIsValidBudget, setMessage }) => {
   return (
-    <header >
-      <h1 className='text-center text-6xl font-bold py-9'>Expense Planner</h1>
+    <header className=''>
+      <h1 className='text-center text-6xl font-bold'>Expense Planner</h1>
 
       {isValidBudget ? (
         <BudgetControl budget={budget} />

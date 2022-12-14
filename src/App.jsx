@@ -40,13 +40,13 @@ const App = () => {
 
   return (
 
-    <div >
+    <div className='bg-red-500 h-full'>
       <div
-        className={`${message ? 'blur-sm' : ''} transition-all duration-700`}
+        className={` ${message ? 'blur-sm' : ''} transition-all duration-700`}
       >
         <ThemeDark />
-        <div className='dark:bg-[#e4d8b4] text-[#dca44b] dark:text-black h-screen py-[200px]' >
-          <div >
+        <div className={`${modal ? 'overflow-hidden h-screen' : 'p-3'}`}>
+          <div className=''>
             <Header
               budget={budget}
               setBudget={setBudget}
@@ -57,7 +57,7 @@ const App = () => {
           {/* para el modal: */}
           {isValidBudget && (
             <>
-              <main>
+              <main className=''>
                 <ListExpenses expense={expense}
                 />
               </main>
@@ -96,6 +96,7 @@ const App = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

@@ -37,7 +37,7 @@ const Modal = ({ modal, setModal, animateModal, setAnimateModal, message, saveEx
 
 
   return (
-    <div className='bg-[#000014] bg-opacity-95 absolute inset-0 color-white text-slate-100'>
+    <div className=' bg-[#000014] bg-opacity-95 absolute inset-0 color-white text-slate-100'>
       <div className={`w-8 h-8 absolute right-12 pt-5 `}>
 
         <img

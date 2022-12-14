@@ -5,15 +5,17 @@ import Spent from './Spent'
 const ListExpenses = ({ expense }) => {
 
   return (
-    <ul>
+    <div className=' '>
       <h2 >{expense.length ? 'Expenses' : 'There are no Expenses'}</h2>
-      {expense.map(expen => (
-        <Spent
-          expen={expen}
-          key={expen.id}
-        />
-      ))}
-    </ul>
+      {
+        expense.map(expen => (
+          <Spent
+            expen={expen}
+            key={expen.id}
+          />
+        ))
+      }
+    </div >
   )
 }
 
