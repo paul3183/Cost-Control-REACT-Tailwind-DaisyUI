@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import closeWindow from '../img/cerrar.svg'
 
-const Modal = ({ modal, setModal, animateModal, setAnimateModal, message }) => {
+const Modal = ({ modal, setModal, animateModal, setAnimateModal, message, saveExpense }) => {
 
   const [messageModal, setMessageModal] = useState('');
 
@@ -31,6 +31,7 @@ const Modal = ({ modal, setModal, animateModal, setAnimateModal, message }) => {
       }, 10000)
       return;
     }
+    saveExpense({ name, amount, category });
   }
 
 

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
+import ListExpenses from './components/ListExpenses'
 import Modal from './components/Modal'
 import ThemeDark from './components/ThemeDark'
 import IconNewExpense from './img/nuevo-gasto.svg'
+import { generateId } from './components/helpers'
+
 
 const App = () => {
 
@@ -13,6 +16,9 @@ const App = () => {
   const [modal, setModal] = useState(false);
   const [animateModal, setAnimateModal] = useState(false);
   const [message, setMessage] = useState(false);
+
+
+
   const handleNewExpense = () => {
     console.log('click to add new expense');
     setModal(true);
@@ -20,8 +26,17 @@ const App = () => {
     //   setMessage('');
     // }, 3000);
   }
+  // 
+  const [expense, setExpense] = useState([]);
+  const saveExpense = (spend) => {
+    // console.log(spend);
+    spend.date = Date.now();
+    spend.id = generateId();
 
-
+    setExpense([...expense, spend]);
+    setModal(false);
+    setAnimateModal(false);
+  }
 
   return (
 
@@ -41,13 +56,20 @@ const App = () => {
           </div>
           {/* para el modal: */}
           {isValidBudget && (
-            <div className='w-[3.5rem] h-[3.5rem] absolute bottom-10 right-10'>
-              <img
-                src={IconNewExpense}
-                alt="Icon New Cost"
-                onClick={handleNewExpense}
-              />
-            </div>
+            <>
+              <main>
+                <ListExpenses expense={expense}
+                />
+              </main>
+              <div className='w-[3.5rem] h-[3.5rem] absolute bottom-10 right-10'>
+                <img
+                  src={IconNewExpense}
+                  alt="Icon New Cost"
+                  onClick={handleNewExpense}
+                />
+              </div>
+            </>
+
           )}
           {/* modal */}
           {modal && <Modal
@@ -56,6 +78,7 @@ const App = () => {
             animateModal={animateModal}
             setAnimateModal={setAnimateModal}
             message={message}
+            saveExpense={saveExpense}
           />
           }
         </div>
